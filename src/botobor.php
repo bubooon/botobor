@@ -405,7 +405,7 @@ class Botobor_Form
 
         $this->meta->timestamp = time();
 
-        if (isset($_SERVER['REQUEST_URI']) && $_SERVER['HTTP_HOST'])
+        if (isset($_SERVER['REQUEST_URI']) && isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'])
         {
             $this->meta->referer = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] ? 'https' : 'http';
             $this->meta->referer .= '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
